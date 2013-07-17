@@ -102,7 +102,7 @@ namespace MvcWebRole1.Areas.HelpPage
 
                 // Trim the generic parameter counts from the name
                 typeName = typeName.Substring(0, typeName.IndexOf('`'));
-                string[] argumentTypeNames = genericArguments.Select(t => GetTypeName(t)).ToArray();
+                string[] argumentTypeNames = genericArguments.Select(GetTypeName).ToArray();
                 return String.Format(CultureInfo.InvariantCulture, "{0}{{{1}}}", typeName, String.Join(",", argumentTypeNames));
             }
 

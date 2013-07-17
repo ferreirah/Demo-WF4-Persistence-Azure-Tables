@@ -38,10 +38,12 @@ namespace MvcWebRole1.Controllers
 
             foreach (var _message in messages)
             {
-                JObject jsonMessage = new JObject();
-                jsonMessage.Add("id", _message.Id);
-                jsonMessage.Add("content", _message.AsString);
-                jsonMessage.Add("expiration_time", _message.ExpirationTime);
+                JObject jsonMessage = new JObject
+                    {
+                        {"id", _message.Id},
+                        {"content", _message.AsString},
+                        {"expiration_time", _message.ExpirationTime}
+                    };
                 array.Add(jsonMessage);
             }
 

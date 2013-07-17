@@ -103,9 +103,10 @@ namespace MyLib.WF4.DurableInstancing
         /// <returns></returns>
         protected override Boolean EndTryCommand(IAsyncResult result)
         {
-            if (result is InstanceStoreAsyncResult)
+            var asyncResult = result as InstanceStoreAsyncResult;
+            if (asyncResult != null)
             {
-                return ((InstanceStoreAsyncResult)result).Value;
+                return asyncResult.Value;
             }
             return true;
         }

@@ -10,9 +10,7 @@
     <tbody>
     @foreach (ApiParameterDescription parameter in Model)
     {
-        string parameterDocumentation = parameter.Documentation != null ?
-            parameter.Documentation :
-            "No documentation available.";
+        string parameterDocumentation = parameter.Documentation ?? "No documentation available.";
 
         // Don't show CancellationToken because it's a special parameter
         if (!typeof(CancellationToken).IsAssignableFrom(parameter.ParameterDescriptor.ParameterType))
@@ -29,7 +27,6 @@
                         case ApiParameterSource.FromUri:
                             <p>Define this parameter in the request <b>URI</b>.</p>
                             break;
-                        case ApiParameterSource.Unknown:
                         default:
                             <p>None.</p>
                             break;

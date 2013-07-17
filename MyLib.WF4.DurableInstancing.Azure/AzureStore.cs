@@ -133,7 +133,7 @@ namespace MyLib.WF4.DurableInstancing
             catch (Exception ex)
             {
                 Trace.TraceError(ex.Message);
-                throw ex;
+                throw;
             }
         }
 
@@ -174,7 +174,7 @@ namespace MyLib.WF4.DurableInstancing
             catch (Exception ex)
             {
                 Trace.TraceError(ex.Message);
-                throw ex;
+                throw;
             }
         }
 
@@ -205,7 +205,7 @@ namespace MyLib.WF4.DurableInstancing
             catch (Exception ex)
             {
                 Trace.TraceError(ex.Message);
-                throw ex;
+                throw;
             }
         }
 
@@ -237,7 +237,7 @@ namespace MyLib.WF4.DurableInstancing
             catch (Exception ex)
             {
                 Trace.TraceError(ex.Message);
-                throw ex;
+                throw;
             }
         }
 

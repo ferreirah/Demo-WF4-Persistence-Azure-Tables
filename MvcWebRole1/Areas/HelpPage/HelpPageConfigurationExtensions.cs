@@ -210,8 +210,7 @@ namespace MvcWebRole1.Areas.HelpPage
         [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "The exception is recorded as ErrorMessages.")]
         private static HelpPageApiModel GenerateApiModel(ApiDescription apiDescription, HelpPageSampleGenerator sampleGenerator)
         {
-            HelpPageApiModel apiModel = new HelpPageApiModel();
-            apiModel.ApiDescription = apiDescription;
+            HelpPageApiModel apiModel = new HelpPageApiModel {ApiDescription = apiDescription};
 
             try
             {
